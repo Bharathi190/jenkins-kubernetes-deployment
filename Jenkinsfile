@@ -15,7 +15,7 @@ pipeline {
       }
     }
 
-    stage('Build image') {
+    stage('Build docker image') {
       steps{
         script {
           dockerImage =  docker.build dockerimagename
@@ -23,7 +23,7 @@ pipeline {
       }
     }
 
-    stage('Pushing Image') {
+    stage('Pushing docker Image') {
       environment {
                registryCredential = 'dockerhublogin'
            }
